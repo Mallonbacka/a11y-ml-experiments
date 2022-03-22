@@ -1,0 +1,12 @@
+version:  '3'
+services:
+  datascience-notebook:
+      image:    jupyter/datascience-notebook
+      volumes:
+        - .:/home/jovyan/work
+      ports:
+        - 8888:8888
+      container_name:   jupyter_notebook
+      command: "start-notebook.sh"
+      environment:
+        - OPENAI_API_KEY
